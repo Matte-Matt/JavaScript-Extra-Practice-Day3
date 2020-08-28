@@ -2,11 +2,15 @@
 TASK 1 🚀
 // in your own words explain what a closure is below in comments and then write an example of a closure. Try to make this explaination simple enough to explain to a younger sibling. */
 
+// A closure is a nested function, the way I try to think about it is as follows. The originally made function is the mama and the functions that are declared inside the mama function are her children. The children have access to all the information that their mama has but the mama cannot access the information the children have. */\
+const bigMamasKids = ["Joe", "Ken", "Elyse", "Ashley", "Xander", "Katherine"];
 
-
-
-
-
+function mama() {
+  const newKid = 6;
+  return function countKids() {
+    return array.toString();
+  };
+}
 /*
 TASK 2 🚀
 // look at the code below and explain in your own words where the variable 'count' is available. 
@@ -14,23 +18,22 @@ TASK 2 🚀
 // Explain how initalizing the variable 'count' with a var would change it's scope
 */
 function counterMaker() {
-    let count = 0;
-    return function counter() {
-     return count++;
-    }
-  }
+  let count = 0;
+  return function counter() {
+    return count++;
+  };
+}
 
-
-
-
-
+// 1) It's available in the function and in the closure as well due to the fact that the closure has access to information already declared.
+// 2) Let is block scoped and it's value can change later after being declared. Const is likewise block scoped but it's value is "constant" therefore it wouldn't be suitable for this function. Var is unlike let in that it's function scoped meaning it could get buggy and break the expected sequence of actions but similar to let, var's value is able to change.
+// 3) As stated before var is function scoped meaning it is accessable outside of this written function as well as inside this is where things can get buggy. */
 
 /*
 TASK 3 🚀
 * The for principles of "this";
 * in your own words. explain the four principle for the "this" keyword below.
 *
-* 1. 
+* 1. Window/Global binding when logged will look for the variable in the global context
 * 2. 
 * 3. 
 * 4. 
@@ -54,11 +57,6 @@ TASK 3 🚀
 
 // code example for Explicit Binding
 
-
-
-
-
-
 /*
 TASK 4 🚀
 /*
@@ -68,7 +66,7 @@ TASK 4 🚀
   
   Each constructor function has unique properties and methods that are defined in their block comments below:
 */
-  
+
 /*
   === GameObject ===
   * createdAt
@@ -93,12 +91,12 @@ TASK 4 🚀
   * should inherit destroy() from GameObject through CharacterStats
   * should inherit takeDamage() from CharacterStats
 */
- 
+
 /*
-  * Inheritance chain: GameObject -> CharacterStats -> Humanoid
-  * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
-  * Instances of CharacterStats should have all of the same properties as GameObject.
-*/
+ * Inheritance chain: GameObject -> CharacterStats -> Humanoid
+ * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
+ * Instances of CharacterStats should have all of the same properties as GameObject.
+ */
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
 
@@ -161,11 +159,6 @@ TASK 4 🚀
   console.log(mage.takeDamage()); // Bruce took damage.
   console.log(swordsman.destroy()); // Sir Mustachio was removed from the game.
 */
-
-
-
-
-
 
 /*
 TASK 5 🚀
